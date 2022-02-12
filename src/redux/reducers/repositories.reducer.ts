@@ -1,9 +1,9 @@
 import IAction from "../../interfaces/action.interface";
 import IRepositoriesState from "../../interfaces/repositories-state.interface";
-import { Action } from "./repositories.action";
-import repositoriesType from "./repositories.type";
+import { Action } from "../actions";
+import repositoriesType from "../action-type";
 
-const reducer = (
+const repositoriesReducer = (
   state: IRepositoriesState,
   action: Action
 ): IRepositoriesState => {
@@ -19,4 +19,4 @@ const reducer = (
   }
 };
 
-export default reducer;
+export default repositoriesReducer;
