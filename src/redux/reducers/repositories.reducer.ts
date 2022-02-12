@@ -3,24 +3,25 @@ import IRepositoriesState from "../../interfaces/repositories-state.interface";
 import repositoriesType from "./repositories.type";
 
 interface searchRepositoriesAction {
-  type: "SEARCH_REPOSITORIES";
+  type: repositoriesType.SEARCH_REPOSITORIES;
 }
 
 interface searchRepositoriesSuccessAction {
-  type: "SEARCH_REPOSITORIES_SUCCESS";
+  type: repositoriesType.SEARCH_REPOSITORIES_SUCCESS;
   payload: string[];
 }
 interface searchRepositoriesErrorAction {
-  type: "SEARCH_REPOSITORIES_ERROR";
+  type: repositoriesType.SEARCH_REPOSITORIES_ERROR;
   payload: string;
 }
 
+type Action = searchRepositoriesAction
+  | searchRepositoriesSuccessAction
+  | searchRepositoriesErrorAction
+
 const reducer = (
   state: IRepositoriesState,
-  action:
-    | searchRepositoriesAction
-    | searchRepositoriesSuccessAction
-    | searchRepositoriesErrorAction
+  action: Action
 ): IRepositoriesState => {
   switch (action.type) {
     case repositoriesType.SEARCH_REPOSITORIES:
