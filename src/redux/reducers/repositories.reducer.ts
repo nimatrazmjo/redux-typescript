@@ -1,23 +1,7 @@
 import IAction from "../../interfaces/action.interface";
 import IRepositoriesState from "../../interfaces/repositories-state.interface";
+import { Action } from "./repositories.action";
 import repositoriesType from "./repositories.type";
-
-interface searchRepositoriesAction {
-  type: repositoriesType.SEARCH_REPOSITORIES;
-}
-
-interface searchRepositoriesSuccessAction {
-  type: repositoriesType.SEARCH_REPOSITORIES_SUCCESS;
-  payload: string[];
-}
-interface searchRepositoriesErrorAction {
-  type: repositoriesType.SEARCH_REPOSITORIES_ERROR;
-  payload: string;
-}
-
-type Action = searchRepositoriesAction
-  | searchRepositoriesSuccessAction
-  | searchRepositoriesErrorAction
 
 const reducer = (
   state: IRepositoriesState,
