@@ -3,8 +3,14 @@ import IRepositoriesState from "../../interfaces/repositories-state.interface";
 import { Action } from "../actions";
 import repositoriesType from "../action-type";
 
+const intialState = {
+  error: null,
+  data: [],
+  loading:false
+}
+
 const repositoriesReducer = (
-  state: IRepositoriesState,
+  state: IRepositoriesState = intialState,
   action: Action
 ): IRepositoriesState => {
   switch (action.type) {
